@@ -12,6 +12,8 @@
 
 Easy-PyTorch 插件为 PyTorch 提供了丰富的代码片段，使得在 VS Code 编辑器中编写 PyTorch 代码变得更加高效和便捷。插件包括了多种与 PyTorch 相关的代码片段，用户可以通过输入特定的前缀来快速插入常用的代码模板。
 
+![example](images/preview.gif)
+
 ## 特性
 
 - **丰富的代码片段**：插件中包含了多个 PyTorch 相关的代码片段，支持各种常用操作。

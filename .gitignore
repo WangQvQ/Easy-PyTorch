@@ -5,3 +5,4 @@ npm-debug.log
 .DS_Store
 .idea
 __pycache__/
+models.py

@@ -14,27 +14,6 @@
             "device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')"
         ]
     },
-    "PyTorch Module": {
-        "prefix": "pytorch:module",
-        "description": "创建一个自定义类模板，继承自 torch.nn.Module",
-        "body": [
-            "class ${1:MyModule}(nn.Module):",            
-            "\t\"\"\"关于 ${1:MyModule} 的信息\"\"\"",
-            "\tdef __init__(self):",
-            "\t\tsuper(${1:MyModule}, self).__init__()",
-            "",
-            "\tdef forward(self, x):",
-            "",
-            "\t\treturn x"
-        ]
-    },
-    "Containers": {
-        "prefix": "pytorch:container",
-        "description": "将模块或参数存储在某种容器中",
-        "body": [
-            "layers = nn.${1|Sequential,ModuleList,ModuleDict,ParameterList,ParameterDict|}($2)"
-        ]
-    },
     "Convolution Layers": {
         "prefix": "pytorch:layer:conv",
         "description": "创建一个卷积层",
@@ -46,14 +25,7 @@
         "prefix": "pytorch:layer:pooling",
         "description": "创建一个池化层",
         "body": [
-            "${1:pool} = nn.${2|MaxPool1d(kernel_size, stride=None, padding=0, dilation=1, return_indices=False, ceil_mode=False),MaxPool2d(kernel_size, stride=None, padding=0, dilation=1, return_indices=False, ceil_mode=False),MaxPool3d(kernel_size, stride=None, padding=0, dilation=1, return_indices=False, ceil_mode=False),AvgPool1d(kernel_size, stride=None, padding=0, ceil_mode=False, count_include_pad=True),AvgPool2d(kernel_size, stride=None, padding=0, ceil_mode=False, count_include_pad=True),AvgPool3d(kernel_size, stride=None, padding=0, ceil_mode=False, count_include_pad=True)|}"
-        ]
-    },
-    "Padding Layers": {
-        "prefix": "pytorch:layer:padding",
-        "description": "创建一个填充层",
-        "body": [
-            "${1:padding} = nn.${2|ZeroPad2d(padding),ReflectionPad2d(padding),ReplicationPad2d(padding)|}($3)"
+            "pool$1 = nn.MaxPool2d(kernel_size=$2, stride=None, padding=0, dilation=1, return_indices=False, ceil_mode=False)"
         ]
     },
     "Non-linear Activations (weighted sum, nonlinearity)": {
@@ -77,18 +49,32 @@
             "${1:batch_norm} = nn.${2|BatchNorm1d(num_features),BatchNorm2d(num_features),BatchNorm3d(num_features)|}($3)"
         ]
     },
-    "Recurrent Layers": {
-        "prefix": "pytorch:layer:rnn",
-        "description": "创建一个递归神经网络层",
+    "PyTorch Module": {
+        "prefix": "pytorch:module",
+        "description": "创建一个自定义类模板，继承自 torch.nn.Module",
         "body": [
-            "${1:rnn} = nn.${2|RNN(input_size, hidden_size, num_layers=1, batch_first=False, dropout=0, bidirectional=False),LSTM(input_size, hidden_size, num_layers=1, batch_first=False, dropout=0, bidirectional=False),GRU(input_size, hidden_size, num_layers=1, batch_first=False, dropout=0, bidirectional=False)|}($3)"
+            "class ${1:MyModule}(nn.Module):",
+            "\t\"\"\"关于 ${1:MyModule} 的信息\"\"\"",
+            "\tdef __init__(self):",
+            "\t\tsuper(${1:MyModule}, self).__init__()",
+            "",
+            "\tdef forward(self, x):",
+            "",
+            "\t\treturn x"
         ]
     },
-    "Transformer Layers": {
-        "prefix": "pytorch:layer:transformer",
-        "description": "创建一个 Transformer 层",
+    "Containers": {
+        "prefix": "pytorch:container",
+        "description": "将模块或参数存储在某种容器中",
         "body": [
-            "${1:transformer} = nn.${2|Transformer(d_model=512, nhead=8, num_encoder_layers=6, num_decoder_layers=6),TransformerEncoderLayer(d_model=512, nhead=8),TransformerDecoderLayer(d_model=512, nhead=8)|}($3)"
+            "layers = nn.${1|Sequential,ModuleList,ModuleDict,ParameterList,ParameterDict|}($2)"
+        ]
+    },
+    "Padding Layers": {
+        "prefix": "pytorch:layer:padding",
+        "description": "创建一个填充层",
+        "body": [
+            "${1:padding} = nn.${2|ZeroPad2d(padding),ReflectionPad2d(padding),ReplicationPad2d(padding)|}($3)"
         ]
     },
     "Linear Layers": {
@@ -103,6 +89,13 @@
         "description": "创建一个 Dropout 层",
         "body": [
             "${1:dropout} = nn.Dropout(p=${2:0.5})"
+        ]
+    },
+    "Transformer Layers": {
+        "prefix": "pytorch:layer:transformer",
+        "description": "创建一个 Transformer 层",
+        "body": [
+            "${1:transformer} = nn.${2|Transformer(d_model=512, nhead=8, num_encoder_layers=6, num_decoder_layers=6),TransformerEncoderLayer(d_model=512, nhead=8),TransformerDecoderLayer(d_model=512, nhead=8)|}($3)"
         ]
     },
     "Sparse Layers": {
