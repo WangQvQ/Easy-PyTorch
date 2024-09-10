@@ -14,7 +14,6 @@ def add_tab_symbol(line):
             return re.sub(pattern, "\t" * int(spaces / 4), line)
     return line
 
-
 def build_json_file(prefix: str, description: str):
     """ 
     Builts a json file out of a txt files. 
