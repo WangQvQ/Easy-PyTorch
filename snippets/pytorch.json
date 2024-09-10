@@ -21,32 +21,32 @@
             "conv$1 = nn.Conv2d(in_channels=$2, out_channels=$3, kernel_size=3, stride=1, padding=0, dilation=1, groups=1, bias=True, padding_mode='zeros', device=None, dtype=None)"
         ]
     },
+    "Transpose Convolution Layers": {
+        "prefix": "pytorch:layer:transpose_conv",
+        "description": "创建一个转置卷积层",
+        "body": [
+            "conv_transpose$1 = nn.ConvTranspose2d(in_channels=$2, out_channels=$3, kernel_size=2, stride=2, padding=0, output_padding=0, groups=1, bias=True, dilation=1, padding_mode='zeros', device=None, dtype=None)"
+        ]
+    },
     "Pooling Layers": {
         "prefix": "pytorch:layer:pooling",
         "description": "创建一个池化层",
         "body": [
-            "pool$1 = nn.MaxPool2d(kernel_size=$2, stride=None, padding=0, dilation=1, return_indices=False, ceil_mode=False)"
+            "pool$1 = nn.MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, return_indices=False, ceil_mode=False)"
         ]
     },
     "Non-linear Activations (weighted sum, nonlinearity)": {
-        "prefix": "pytorch:layer:activation:weighted",
-        "description": "添加加权和非线性激活函数",
+        "prefix": "pytorch:layer:activation",
+        "description": "添加加权和其他非线性激活函数",
         "body": [
-            "${1:nonlin} = nn.${2|ELU(alpha=1.0, inplace=False),Hardshrink(lambd=0.5),Hardtanh(min_val=-1.0, max_val=1.0, inplace=False),LeakyReLU(negative_slope=0.01, inplace=False),LogSigmoid,PReLU(num_parameters=1, init=0.25)|}"
-        ]
-    },
-    "Non-linear Activations (other)": {
-        "prefix": "pytorch:layer:activation:other",
-        "description": "添加其他非线性激活函数",
-        "body": [
-            "${1:nonlin} = nn.${2|ReLU(inplace=False),ReLU6(inplace=False),RReLU(lower=0.125, upper=0.333, inplace=False),CELU(alpha=1.0, inplace=False),SELU(inplace=False),Sigmoid,Softplus(beta=1.0, threshold=20),Softshrink(lambd=0.5),Softsign,Tanh,Tanhshrink,Threshold(threshold, value, inplace=False)|}"
+            "${1:act} = nn.${2|ReLU(inplace=False),Mish(inplace=False),SiLU(inplace=False),LeakyReLU(negative_slope=0.01\\, inplace=False),Hardsigmoid(inplace=False),Hardshrink(lambd=0.5),Hardtanh(min_val=-1\\, max_val=1\\, inplace=False\\, min_value=None\\, max_value=None),LogSigmoid,PReLU(num_parameters=1\\, init=0.25),ELU(alpha=1.\\, inplace=False),ReLU6(inplace=False),RReLU(lower=0.125\\, upper=0.3333333333333333\\, inplace=False),CELU(alpha=1.0\\, inplace=False),SELU(inplace=False),Sigmoid,Softplus(beta=1\\, threshold=20),Softshrink(lambd=0.5),Softsign,Tanh,Tanhshrink,Threshold(threshold\\, value\\, inplace=False),Softmin(dim=None),Softmax(dim=None),Softmax2d,LogSoftmax(dim=None),AdaptiveLogSoftmaxWithLogits(in_features\\, n_classes\\, cutoffs\\, div_value=4.0\\, head_bias=True)|}"
         ]
     },
     "Normalization Layers": {
         "prefix": "pytorch:layer:batchnorm",
         "description": "创建一个批量归一化层",
         "body": [
-            "${1:batch_norm} = nn.${2|BatchNorm1d(num_features),BatchNorm2d(num_features),BatchNorm3d(num_features)|}($3)"
+            "bn = nn.BatchNorm2d(out_channels=$1, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, device=None, dtype=None)"
         ]
     },
     "PyTorch Module": {
@@ -57,12 +57,14 @@
             "\t\"\"\"关于 ${1:MyModule} 的信息\"\"\"",
             "\tdef __init__(self):",
             "\t\tsuper(${1:MyModule}, self).__init__()",
-            "",
+            "\t\t$2",
             "\tdef forward(self, x):",
-            "",
+            "\t\t$3",
             "\t\treturn x"
         ]
     },
+
+
     "Containers": {
         "prefix": "pytorch:container",
         "description": "将模块或参数存储在某种容器中",
@@ -70,13 +72,7 @@
             "layers = nn.${1|Sequential,ModuleList,ModuleDict,ParameterList,ParameterDict|}($2)"
         ]
     },
-    "Padding Layers": {
-        "prefix": "pytorch:layer:padding",
-        "description": "创建一个填充层",
-        "body": [
-            "${1:padding} = nn.${2|ZeroPad2d(padding),ReflectionPad2d(padding),ReplicationPad2d(padding)|}($3)"
-        ]
-    },
+
     "Linear Layers": {
         "prefix": "pytorch:layer:linear",
         "description": "创建一个线性层",
@@ -91,36 +87,17 @@
             "${1:dropout} = nn.Dropout(p=${2:0.5})"
         ]
     },
-    "Transformer Layers": {
-        "prefix": "pytorch:layer:transformer",
-        "description": "创建一个 Transformer 层",
-        "body": [
-            "${1:transformer} = nn.${2|Transformer(d_model=512, nhead=8, num_encoder_layers=6, num_decoder_layers=6),TransformerEncoderLayer(d_model=512, nhead=8),TransformerDecoderLayer(d_model=512, nhead=8)|}($3)"
-        ]
-    },
-    "Sparse Layers": {
-        "prefix": "pytorch:layer:sparse",
-        "description": "创建一个稀疏层",
-        "body": [
-            "${1:sparse} = nn.${2|EmbeddingBag(num_embeddings, embedding_dim, mode='mean', sparse=True),Embedding(num_embeddings, embedding_dim, sparse=True)|}($3)"
-        ]
-    },
     "Distance Functions": {
-        "prefix": "pytorch:loss:distance",
+        "prefix": "pytorch:distance",
         "description": "选择距离函数",
         "body": [
-            "distance = nn.${1|PairwiseDistance(p=2),CosineSimilarity(dim=1),MarginRankingLoss(margin=0.5)|}($2)"
+            "distance = nn.${1|PairwiseDistance(p=2.0\\, eps=1e-06\\, keepdim=False),CosineSimilarity(dim=1\\, eps=1e-08)|}"
         ]
     },
-    "Loss Functions": {
-        "prefix": "pytorch:loss",
-        "description": "选择损失函数",
-        "body": [
-            "criterion = nn.${1|CrossEntropyLoss,NLLLoss,PoissonNLLLoss,BCELoss,BCEWithLogitsLoss,MarginRankingLoss,HingeEmbeddingLoss,MultiLabelMarginLoss,SoftMarginLoss,MultiLabelSoftMarginLoss,CosineEmbeddingLoss,MultiMarginLoss,TripletMarginLoss,CTCLoss|}()"
-        ]
-    },
+
+
     "Vision Layers": {
-        "prefix": "pytorch:layer:vision",
+        "prefix": "pytorch:layer:Conv",
         "description": "创建视觉网络层",
         "body": [
             "${1:vision} = nn.${2|Conv2d(in_channels, out_channels, kernel_size=3, stride=1, padding=1),BatchNorm2d(num_features)|}($3)"
@@ -131,6 +108,14 @@
         "description": "创建 Shuffle 层",
         "body": [
             "shuffle = nn.${1|PixelShuffle(upscale_factor),ShuffleNetV2(channels, out_channels, stride, dilation)|}"
+        ]
+    },
+
+    "Loss Functions": {
+        "prefix": "pytorch:loss",
+        "description": "选择损失函数",
+        "body": [
+            "criterion = nn.${1|CrossEntropyLoss,NLLLoss,PoissonNLLLoss,BCELoss,BCEWithLogitsLoss,MarginRankingLoss,HingeEmbeddingLoss,MultiLabelMarginLoss,SoftMarginLoss,MultiLabelSoftMarginLoss,CosineEmbeddingLoss,MultiMarginLoss,TripletMarginLoss,CTCLoss|}()"
         ]
     }
 }

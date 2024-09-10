@@ -9,9 +9,6 @@ Full collection of supported code snippets for the PyTorch and Fastai library. `
     2. [PyTorch Layer](#pytorch-layer)
     3. [PyTorch Functional](#pytorch-functional)
     4. [PyTorch Examples](#pytorch-example)
-2. [Torchvision Snippets](#torchvision)
-   1. [Torchvision Datasets](#torchvision-datasets)
-   2. [Torchvision Models](#torchvision-models)
 
 ## <a name="pytorch" > </a> PyTorch Snippets
 
@@ -72,33 +69,3 @@ Full collection of supported code snippets for the PyTorch and Fastai library. `
 | `pytorch:F:loss→`       | applies a loss function          |
 | `pytorch:F:distance→`   | applies a distance function      |
 
-### <a name="pytorch-example" > </a> PyTorch Code Examples
-
-| Trigger                     | Content                                                        |
-| --------------------------- | -------------------------------------------------------------- |
-| `pytorch:example:imagenet→` | imagenet example                                               |
-| `pytorch:example:mnist→`    | mnist example                                                  |
-| `pytorch:example:vpg→`      | template for the reinforcement-learning REINFORCE algorithm    |
-| `pytorch:example:ac→`       | template for the reinforcement-learning actor-critic algorithm |
-| `pytorch:example:dcgan→`    | template for DCGAN                                             |
-| `pytorch:example:vae→`      | template for variational autoencoder                           |
-
-## <a name="torchvision" > </a> Torchvision Snippets
-
-### <a name="torchvision-datasets" > </a> Torchvision Datasets
-
-| Trigger                               | Content                                                                          |
-| ------------------------------------- | -------------------------------------------------------------------------------- |
-| `pytorch:torchvision:load_dataset_1→` | load specified datasets                                                          |
-| `pytorch:torchvision:load_dataset_2→` | load specified datasets                                                          |
-| `pytorch:torchvision:load_dataset_3→` | load specified datasets                                                          |
-| `pytorch:torchvision:image_folder→`   | generic image dataloader from folder (requires root/class_x/image.png structure) |
-| `pytorch:torchvision:dataset_folder→` | generic dataloader (requires root/class_x/xxx.ext structure)                     |
-
-### <a name="torchvision-models" > </a> Torchvision Models
-
-| Trigger                                        | Content                 |
-| ---------------------------------------------- | ----------------------- |
-| `pytorch:torchvision:load_model→`              | load (pretrained) model |
-| `pytorch:torchvision:load_segmentation_model→` | load segmentation model |
-| `pytorch:torchvision:load_detection_model→`    | load detection model    |

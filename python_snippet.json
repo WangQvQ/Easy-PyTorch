@@ -2,6 +2,6 @@
     "prefix": "pytorch:prefix",
     "description": "Short description",
     "body": [
-        "pool = nn.MaxPool2d(kernel_size, stride=None, padding=0, dilation=1, return_indices=False, ceil_mode=False)"
+        "bn = nn.BatchNorm2d(out_channels=, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, device=None, dtype=None)"
     ]
 }
