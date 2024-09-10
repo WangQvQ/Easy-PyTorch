@@ -1,0 +1,50 @@
+{
+    "name": "插件的名称",
+    "displayName": "插件的显示名称",
+    "description": "插件的描述",
+    "version": "插件的版本号",
+    "publisher": "插件发布者的名称",
+    "author": {
+        "name": "作者姓名",
+        "email": "作者电子邮件"
+    },
+    "icon": "插件图标文件路径",
+    "galleryBanner": {
+        "color": "展示横幅的背景色",
+        "theme": "展示横幅的主题"
+    },
+    "keywords": [
+        "关键词1",
+        "关键词2",
+        "关键词3",
+        "关键词4",
+        "关键词5"
+    ],
+    "bugs": {
+        "url": "问题追踪URL"
+    },
+    "repository": {
+        "type": "源代码仓库类型",
+        "url": "源代码仓库URL"
+    },
+    "license": "许可证类型",
+    "homepage": "插件主页URL",
+    "engines": {
+        "vscode": "支持的VS Code版本范围"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "代码片段适用的语言",
+                "path": "代码片段文件路径"
+            },
+            {
+                "language": "代码片段适用的语言",
+                "path": "代码片段文件路径"
+            }
+        ]
+    }
+}

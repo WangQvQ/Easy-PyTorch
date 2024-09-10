@@ -1,0 +1,12 @@
+.vscode/**
+.vscode-test/**
+out/test/**
+test/**
+src/**
+**/*.map
+.gitignore
+snippet_maker.py
+python_snippet.txt
+python_snippet.json
+tsconfig.json
+vsc-extension-quickstart.md

@@ -1,0 +1,7 @@
+*.vsix
+out
+node_modules
+npm-debug.log
+.DS_Store
+.idea
+__pycache__/
