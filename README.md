@@ -1,8 +1,3 @@
-# 监修中（尚未发布到VsCode插件市场）！
-
-
-
----
 
 # Easy-PyTorch
 
@@ -22,10 +17,18 @@
 
 ## 如何安装
 
-1. 打开您的 VS Code 编辑器。
-2. 访问扩展商店（快捷键：`Ctrl+Shift+X`）。
-3. 输入“Easy-PyTorch”进行搜索。
-4. 点击“安装”，即可完成插件的添加。
+将本地项目移动到 Visual Studio Code 的扩展文件夹，可以通过简单的文件操作完成。以下是一般步骤和注意事项：
+
+### 步骤 1: 确定 VSCode 扩展文件夹位置
+Visual Studio Code 扩展通常存放在以下位置：
+- **Windows**: `C:\Users\{你的用户名}\.vscode\extensions`
+- **macOS**: `~/.vscode/extensions`
+- **Linux**: `~/.vscode/extensions`
+
+### 步骤 2: 下载项目
+- **git指令**: 在步骤 1 的路径下输入 `git clone https://github.com/WangQvQ/Easy-PyTorch.git`
+- **手动下载**: 手动下载并解压到步骤 1 的路径下
+
 
 ## 如何使用
 
