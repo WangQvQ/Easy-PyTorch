@@ -7,7 +7,7 @@
 
 想要在 VS Code 里更便捷地编写 PyTorch 代码？Easy-PyTorch 插件提供了大量预设代码片段，只需简单输入，常用代码模板即刻呈现。我们的目标是使得机器学习的编程过程不仅高效但也更加友好。
 
-![example](images/preview.gif)
+![example](https://github.com/user-attachments/assets/28b252b5-c38e-4a4e-bacc-ac26ee0b7d49)
 
 ## 特性
 
