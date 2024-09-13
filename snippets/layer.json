@@ -35,7 +35,7 @@
         ]
     },
     "Containers": {
-        "prefix": "pytorch:container",
+        "prefix": "pytorch:layer:container",
         "description": "将模块或参数存储在某种容器中",
         "body": [
             "layers = nn.${1|Sequential,ModuleList,ModuleDict,ParameterList,ParameterDict|}($2)"
@@ -56,7 +56,7 @@
         ]
     },
     "PyTorch Module": {
-        "prefix": "pytorch:module",
+        "prefix": "pytorch:layer:module",
         "description": "创建一个自定义类模板，继承自 torch.nn.Module",
         "body": [
             "class ${1:MyModule}(nn.Module):",
