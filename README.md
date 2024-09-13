@@ -11,7 +11,7 @@
 
 我们的目标是让机器学习的编程不仅高效，而且更加用户友好，即使是编程新手也能快速上手并享受创造自己的机器学习模型的乐趣。
 
-![example](https://github.com/user-attachments/assets/28b252b5-c38e-4a4e-bacc-ac26ee0b7d49)
+![example](https://raw.githubusercontent.com/WangQvQ/Easy-PyTorch/main/images/preview.gif)
 
 ## 特性
 
@@ -23,9 +23,12 @@
 
 将本地项目移动到 Visual Studio Code 的扩展文件夹，可以通过简单的文件操作完成。以下是一般步骤和注意事项：
 
-### 方法 1
- Visual Studio Code 扩展中搜索 Easy Pytorch 点击安装即可
 
+
+### 方法 1
+Visual Studio Code 扩展中搜索 Easy Pytorch 点击安装即可
+
+![example](https://raw.githubusercontent.com/WangQvQ/Easy-PyTorch/main/images/vscode.png)
 
 ### 方法 2
 
