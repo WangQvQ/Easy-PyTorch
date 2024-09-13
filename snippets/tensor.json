@@ -1,0 +1,58 @@
+{
+    "Torch Tensor: Tensor": {
+        "prefix": "pytorch:tensor:Tensor",
+        "description": "创建一个未初始化的张量",
+        "body": [
+            "tensor$1 = torch.Tensor([2, 3])"
+        ]
+    },
+    "Torch Tensor: randn": {
+        "prefix": "pytorch:tensor:randn",
+        "description": "创建一个服从标准正态分布的随机数张量",
+        "body": [
+            "tensor$1 = torch.randn(2, 3)"
+        ]
+    },
+    "Torch Tensor: rand": {
+        "prefix": "pytorch:tensor:rand",
+        "description": "创建一个服从均匀分布的随机数张量",
+        "body": [
+            "tensor$1 = torch.rand(2, 3)"
+        ]
+    },
+    "Torch Tensor: zeros": {
+        "prefix": "pytorch:tensor:zeros",
+        "description": "创建一个全 0 张量",
+        "body": [
+            "tensor$1 = torch.zeros(2, 3)"
+        ]
+    },
+    "Torch Tensor: ones": {
+        "prefix": "pytorch:tensor:ones",
+        "description": "创建一个全 1 张量",
+        "body": [
+            "tensor$1 = torch.ones(2, 3)"
+        ]
+    },
+    "Torch Tensor: eye": {
+        "prefix": "pytorch:tensor:eye",
+        "description": "创建一个单位矩阵张量",
+        "body": [
+            "tensor$1 = torch.eye(3)"
+        ]
+    },
+    "Torch Tensor: arange": {
+        "prefix": "pytorch:tensor:arange",
+        "description": "创建一个序列张量",
+        "body": [
+            "tensor$1 = torch.arange(0, 10, 2)"
+        ]
+    },
+    "Torch Tensor: linspace": {
+        "prefix": "pytorch:tensor:linspace",
+        "description": "创建一个均匀间隔张量",
+        "body": [
+            "tensor$1 = torch.linspace(0, 1, 5)"
+        ]
+    }
+}
