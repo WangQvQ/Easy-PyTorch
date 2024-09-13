@@ -23,19 +23,28 @@
 
 将本地项目移动到 Visual Studio Code 的扩展文件夹，可以通过简单的文件操作完成。以下是一般步骤和注意事项：
 
-### 步骤 1: 确定 VSCode 扩展文件夹位置
+### 方法 1
+ Visual Studio Code 扩展中搜索 Easy Pytorch 点击安装即可
+
+
+### 方法 2
+
+1. 确定 VSCode 扩展文件夹位置
 Visual Studio Code 扩展通常存放在以下位置：
 - **Windows**: `C:\Users\{你的用户名}\.vscode\extensions`
 - **macOS**: `~/.vscode/extensions`
 - **Linux**: `~/.vscode/extensions`
 
-### 步骤 2: 下载项目
+2. 下载并移动项目
 
 - **手动下载**: 手动下载并解压到步骤 1 的路径下。
+
+
 
 ## 如何使用
 
 - 在 Python 文件中输入 `pytorch` 开始，系统会显示所有相关的代码片段。
+- 或直接键入 `conv` `pooling` 等代码，支持模糊输入。
 - 从弹出的列表中选择所需片段，按 Enter 键插入。
 - 按 Tab 键在代码片段的各个占位符之间自由切换。
 
