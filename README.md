@@ -11,13 +11,21 @@
 
 我们的目标是让机器学习的编程不仅高效，而且更加用户友好，即使是编程新手也能快速上手并享受创造自己的机器学习模型的乐趣。
 
-![example](https://raw.githubusercontent.com/WangQvQ/Easy-PyTorch/main/images/preview.gif)
+<div style="text-align: center;">
+<img src="https://raw.githubusercontent.com/WangQvQ/Easy-PyTorch/main/images/preview.gif" alt="peculiarity"/>
+</div>
+
 
 ## 特性
 
 - **代码片段库**：涵盖各种 PyTorch 操作的丰富代码片段，提供快速编程的捷径。
 - **智能提示功能**：在您编写代码时，只需输入 `pytorch`，就能看到与之相关的所有可用代码片段。
 - **高度定制**：插件的代码片段包括占位符、变量和选项，您可以轻松定制，并通过 Tab 键在不同选项间切换。
+
+
+<div style="text-align: center;">
+<img src="https://raw.githubusercontent.com/WangQvQ/Easy-PyTorch/main/images/prompt.png" alt="peculiarity" width="800"/>
+</div>
 
 ## 如何安装
 
@@ -28,7 +36,10 @@
 ### 方法 1
 Visual Studio Code 扩展中搜索 Easy Pytorch 点击安装即可
 
-![example](https://raw.githubusercontent.com/WangQvQ/Easy-PyTorch/main/images/vscode.png)
+<div style="text-align: center;">
+<img src="https://raw.githubusercontent.com/WangQvQ/Easy-PyTorch/main/images/vscode.png" alt="peculiarity"/>
+</div>
+
 
 ### 方法 2
 
