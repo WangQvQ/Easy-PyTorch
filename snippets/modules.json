@@ -1,0 +1,133 @@
+{
+    "PyTorch Module": {
+        "prefix": "pytorch:modules:module",
+        "description": "创建一个自定义类模板",
+        "body": [
+            "class ${1:MyModule}(nn.Module):",
+            "\t\"\"\"关于 ${1:MyModule} 的信息\"\"\"",
+            "\tdef __init__(self):",
+            "\t\tsuper(${1:MyModule}, self).__init__()",
+            "\t\t$2",
+            "\tdef forward(self, x):",
+            "\t\t$3",
+            "\t\treturn x"
+        ]
+    },
+    "PyTorch Module: autopad": {
+        "prefix": "pytorch:modules:autopad",
+        "description": "自动补Padding方法",
+        "body": [
+            "def autopad(k, p=None, d=1):  # kernel, padding, dilation",
+            "\t\"\"\"Pad to 'same' shape outputs.\"\"\"",
+            "\tif d > 1:",
+            "\t\tk = d * (k - 1) + 1 if isinstance(k, int) else [d * (x - 1) + 1 for x in k]  # actual kernel-size",
+            "\tif p is None:",
+            "\t\tp = k // 2 if isinstance(k, int) else [x // 2 for x in k]  # auto-pad",
+            "\treturn p"
+        ]
+    },
+    "PyTorch Module: Conv": {
+        "prefix": "pytorch:modules:Conv",
+        "description": "标准卷积",
+        "body": [
+            "class Conv(nn.Module):",
+            "\t\"\"\"\u6807\u51c6\u5377\u79ef\"\"\"",
+            "",
+            "\tdefault_act = nn.SiLU()  # \u9ed8\u8ba4\u6fc0\u6d3b\u51fd\u6570",
+            "",
+            "\tdef __init__(self, c1, c2, k=1, s=1, p=None, g=1, d=1, act=True):",
+            "\t\t\"\"\"\u4f7f\u7528\u7ed9\u5b9a\u7684\u53c2\u6570\uff08\u5305\u62ec\u6fc0\u6d3b\u51fd\u6570\uff09\u521d\u59cb\u5316\u5377\u79ef\u5c42\"\"\"",
+            "\t\tsuper().__init__()",
+            "\t\tself.conv = nn.Conv2d(c1, c2, k, s, autopad(k, p, d), groups=g, dilation=d, bias=False)",
+            "\t\tself.bn = nn.BatchNorm2d(c2)",
+            "\t\tself.act = self.default_act if act is True else act if isinstance(act, nn.Module) else nn.Identity()",
+            "",
+            "\tdef forward(self, x):",
+            "\t\t\"\"\"\u5bf9\u8f93\u5165\u5f20\u91cf\u5e94\u7528\u5377\u79ef\u3001\u6279\u91cf\u5f52\u4e00\u5316\u548c\u6fc0\u6d3b\u51fd\u6570\"\"\"",
+            "\t\treturn self.act(self.bn(self.conv(x)))"
+        ]
+    },
+    "PyTorch Module: LightConv": {
+        "prefix": "pytorch:modules:LightConv",
+        "description": "轻量级卷积",
+        "body": [
+            "class LightConv(nn.Module):",
+            "\t\"\"\"\u8f7b\u91cf\u7ea7\u5377\u79ef\"\"\"",
+            "",
+            "\tdef __init__(self, c1, c2, k=1, act=nn.ReLU()):",
+            "\t\t\"\"\"\u4f7f\u7528\u7ed9\u5b9a\u7684\u6fc0\u6d3b\u51fd\u6570\u521d\u59cb\u5316\u5377\u79ef\u5c42\u3002\"\"\"",
+            "\t\tsuper().__init__()",
+            "\t\tself.conv1 = Conv(c1, c2, 1, act=False)",
+            "\t\tself.conv2 = DWConv(c2, c2, k, act=act)",
+            "",
+            "\tdef forward(self, x):",
+            "\t\t\"\"\"\u5bf9\u8f93\u5165\u5f20\u91cf\u5e94\u7528\u4e24\u4e2a\u5377\u79ef\u64cd\u4f5c\u3002\"\"\"",
+            "\t\treturn self.conv2(self.conv1(x))"
+        ]
+    },
+    "PyTorch Module: DWConv": {
+        "prefix": "pytorch:modules:DWConv",
+        "description": "深度可分离卷积",
+        "body": [
+            "class DWConv(Conv):",
+            "\t\"\"\"\u6df1\u5ea6\u53ef\u5206\u79bb\u5377\u79ef\"\"\"",
+            "",
+            "\tdef __init__(self, c1, c2, k=1, s=1, d=1, act=True):  # ch_in, ch_out, kernel, stride, dilation, activation",
+            "\t\t\"\"\"\u4f7f\u7528\u7ed9\u5b9a\u7684\u53c2\u6570\u521d\u59cb\u5316\u6df1\u5ea6\u53ef\u5206\u79bb\u5377\u79ef\"\"\"",
+            "\t\tsuper().__init__(c1, c2, k, s, g=math.gcd(c1, c2), d=d, act=act)"
+        ]
+    },
+    "PyTorch Module: DWConvTranspose2d": {
+        "prefix": "pytorch:modules:DWConvTranspose2d",
+        "description": "深度可分离反卷积",
+        "body": [
+            "class DWConvTranspose2d(nn.ConvTranspose2d):",
+            "\t\"\"\"\u6df1\u5ea6\u53ef\u5206\u79bb\u53cd\u5377\u79ef\"\"\"",
+            "",
+            "\tdef __init__(self, c1, c2, k=1, s=1, p1=0, p2=0):  # ch_in, ch_out, kernel, stride, padding, padding_out",
+            "\t\t\"\"\"\u4f7f\u7528\u7ed9\u5b9a\u7684\u53c2\u6570\u521d\u59cb\u5316DWConvTranspose2d\u7c7b\"\"\"",
+            "\t\tsuper().__init__(c1, c2, k, s, p1, p2, groups=math.gcd(c1, c2))"
+        ]
+    },
+    "PyTorch Module: ConvTranspose": {
+        "prefix": "pytorch:modules:ConvTranspose",
+        "description": "二维反卷积",
+        "body": [
+            "class ConvTranspose(nn.Module):",
+            "\t\"\"\"\u4e8c\u7ef4\u53cd\u5377\u79ef\u5c42\"\"\"",
+            "",
+            "\tdefault_act = nn.SiLU()  # \u9ed8\u8ba4\u6fc0\u6d3b\u51fd\u6570",
+            "",
+            "\tdef __init__(self, c1, c2, k=2, s=2, p=0, bn=True, act=True):",
+            "\t\t\"\"\"\u4f7f\u7528\u6279\u91cf\u5f52\u4e00\u5316\u548c\u6fc0\u6d3b\u51fd\u6570\u521d\u59cb\u5316ConvTranspose2d\u5c42\"\"\"",
+            "\t\tsuper().__init__()",
+            "\t\tself.conv_transpose = nn.ConvTranspose2d(c1, c2, k, s, p, bias=not bn)",
+            "\t\tself.bn = nn.BatchNorm2d(c2) if bn else nn.Identity()",
+            "\t\tself.act = self.default_act if act is True else act if isinstance(act, nn.Module) else nn.Identity()",
+            "",
+            "\tdef forward(self, x):",
+            "\t\t\"\"\"\u5bf9\u8f93\u5165\u5e94\u7528\u53cd\u5377\u79ef\u3001\u6279\u91cf\u5f52\u4e00\u5316\u548c\u6fc0\u6d3b\u51fd\u6570\"\"\"",
+            "\t\treturn self.act(self.bn(self.conv_transpose(x)))"
+        ]
+    },
+    "PyTorch Module: GhostConv": {
+        "prefix": "pytorch:modules:GhostConv",
+        "description": "GhostConv",
+        "body": [
+            "class GhostConv(nn.Module):",
+            "\t\"\"\"Ghost \u5377\u79ef\"\"\"",
+            "",
+            "\tdef __init__(self, c1, c2, k=1, s=1, g=1, act=True):",
+            "\t\t\"\"\"\u4f7f\u7528\u8f93\u5165\u901a\u9053\u3001\u8f93\u51fa\u901a\u9053\u3001\u6838\u5927\u5c0f\u3001\u6b65\u957f\u3001\u7ec4\u6570\u548c\u6fc0\u6d3b\u51fd\u6570\u521d\u59cb\u5316 GhostConv \u5bf9\u8c61\"\"\"",
+            "\t\tsuper().__init__()",
+            "\t\tc_ = c2 // 2  # \u9690\u85cf\u901a\u9053\u6570",
+            "\t\tself.cv1 = Conv(c1, c_, k, s, None, g, act=act)",
+            "\t\tself.cv2 = Conv(c_, c_, 5, 1, None, c_, act=act)",
+            "",
+            "\tdef forward(self, x):",
+            "\t\t\"\"\"\u901a\u8fc7\u5177\u6709\u8df3\u8dc3\u8fde\u63a5\u7684 Ghost \u74f6\u9888\u5c42\u8fdb\u884c\u524d\u5411\u4f20\u64ad\"\"\"",
+            "\t\ty = self.cv1(x)",
+            "\t\treturn torch.cat((y, self.cv2(y)), 1)"
+        ]
+    }
+}

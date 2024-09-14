@@ -54,33 +54,5 @@
         "body": [
             "${1:dropout} = nn.Dropout(p=${2:0.5})"
         ]
-    },
-    "PyTorch Module": {
-        "prefix": "pytorch:layer:module",
-        "description": "创建一个自定义类模板",
-        "body": [
-            "class ${1:MyModule}(nn.Module):",
-            "\t\"\"\"关于 ${1:MyModule} 的信息\"\"\"",
-            "\tdef __init__(self):",
-            "\t\tsuper(${1:MyModule}, self).__init__()",
-            "\t\t$2",
-            "\tdef forward(self, x):",
-            "\t\t$3",
-            "\t\treturn x"
-        ]
-    },
-    "Vision Layers": {
-        "prefix": "pytorch:layer:Conv",
-        "description": "创建视觉网络层",
-        "body": [
-            "${1:vision} = nn.${2|Conv2d(in_channels, out_channels, kernel_size=3, stride=1, padding=1),BatchNorm2d(num_features)|}($3)"
-        ]
-    },
-    "Shuffle Layers": {
-        "prefix": "pytorch:layer:shuffle",
-        "description": "创建 Shuffle 层",
-        "body": [
-            "shuffle = nn.${1|PixelShuffle(upscale_factor),ShuffleNetV2(channels, out_channels, stride, dilation)|}"
-        ]
     }
 }

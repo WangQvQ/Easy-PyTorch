@@ -2,7 +2,7 @@
     "name": "Easy-PyTorch",
     "displayName": "Easy PyTorch",
     "description": "Type Less, Code More",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "publisher": "WangQvQ",
     "author": {
         "name": "WangQvQ",
@@ -56,6 +56,10 @@
             {
                 "language": "python",
                 "path": "./snippets/math_operations.json"
+            },
+            {
+                "language": "python",
+                "path": "./snippets/modules.json"
             }
         ]
     }
