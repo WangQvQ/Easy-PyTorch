@@ -1,0 +1,16 @@
+{
+    "Optimizer: SGD": {
+        "prefix": "pytorch:optimizer",
+        "description": "SGD 优化器",
+        "body": [
+            "optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.9)"
+        ]
+    },
+    "Loss Functions": {
+        "prefix": "pytorch:loss",
+        "description": "选择损失函数",
+        "body": [
+            "criterion = nn.${1|CrossEntropyLoss,NLLLoss,PoissonNLLLoss,BCELoss,BCEWithLogitsLoss,MarginRankingLoss,HingeEmbeddingLoss,MultiLabelMarginLoss,SoftMarginLoss,MultiLabelSoftMarginLoss,CosineEmbeddingLoss,MultiMarginLoss,TripletMarginLoss,CTCLoss|}()"
+        ]
+    }
+}

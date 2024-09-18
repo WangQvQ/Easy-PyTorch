@@ -4,7 +4,9 @@
         "description": "常用的 PyTorch 导入库",
         "body": [
             "import torch",
-            "import torch.nn as nn"
+            "from torch import nn, optim",
+            "from torchvision import datasets, transforms",
+            "from torch.utils.data import DataLoader"
         ]
     },
     "Check Device": {
@@ -30,13 +32,6 @@
         "description": "选择距离函数",
         "body": [
             "distance = nn.${1|PairwiseDistance(p=2.0\\, eps=1e-06\\, keepdim=False),CosineSimilarity(dim=1\\, eps=1e-08)|}"
-        ]
-    },
-    "Loss Functions": {
-        "prefix": "pytorch:loss",
-        "description": "选择损失函数",
-        "body": [
-            "criterion = nn.${1|CrossEntropyLoss,NLLLoss,PoissonNLLLoss,BCELoss,BCEWithLogitsLoss,MarginRankingLoss,HingeEmbeddingLoss,MultiLabelMarginLoss,SoftMarginLoss,MultiLabelSoftMarginLoss,CosineEmbeddingLoss,MultiMarginLoss,TripletMarginLoss,CTCLoss|}()"
         ]
     }
 }
