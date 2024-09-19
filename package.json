@@ -63,7 +63,7 @@
             },
             {
                 "language": "python",
-                "path": "./snippets/optim.json"
+                "path": "./snippets/optim_loss.json.json"
             }
         ]
     }
