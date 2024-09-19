@@ -1,7 +1,7 @@
 {
     "Attentions Layers: SE": {
-        "prefix": "SE 注意力模块",
-        "description": "pytorch:attention:SE",
+        "prefix": "pytorch:attention:SE",
+        "description": "SE 注意力模块",
         "body": [
             "class SE(nn.Module):",
             "\t\"\"\"",
@@ -30,8 +30,8 @@
         ]
     },
     "Attentions Layers: CBAM": {
-        "prefix": "CBAM 注意力模块",
-        "description": "pytorch:attention:CBAM",
+        "prefix": "pytorch:attention:CBAM",
+        "description": "CBAM 注意力模块",
         "body": [
             "class ChannelAttention(nn.Module):",
             "\t\"\"\"",
@@ -95,8 +95,8 @@
         ]
     },
     "Attentions Layers: ECA": {
-        "prefix": "ECA 注意力模块",
-        "description": "pytorch:attention:ECA",
+        "prefix": "pytorch:attention:ECA",
+        "description": "ECA 注意力模块",
         "body": [
             "class ECA(nn.Module):",
             "\t\"\"\"",
@@ -122,8 +122,8 @@
         ]
     },
     "Attentions Layers: CA": {
-        "prefix": "CA 注意力模块",
-        "description": "pytorch:attention:CA",
+        "prefix": "pytorch:attention:CA",
+        "description": "CA 注意力模块",
         "body": [
             "class h_sigmoid(nn.Module):",
             "\t\"\"\"",
