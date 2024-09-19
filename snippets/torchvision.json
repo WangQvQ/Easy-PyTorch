@@ -1,12 +1,4 @@
 {
-    "Torchvision: dataloader": {
-        "prefix": "pytorch:torchvision:dataloader",
-        "description": "创建一个数据加载器",
-        "body": [
-            "train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)",
-            "test_loader = DataLoader(dataset=test_dataset, batch_size=batch_size, shuffle=False)"
-        ]
-    },
     "Torchvision: dataset: MNIST": {
         "prefix": "pytorch:torchvision:dataset:MNIST",
         "description": "定义 MNIST 数据集",
@@ -21,6 +13,14 @@
         "body": [
             "train_dataset = datasets.CIFAR10(root='./data', train=True, transform=transforms.ToTensor(), download=True)",
             "test_dataset = datasets.CIFAR10(root='./data', train=False, transform=transforms.ToTensor(), download=True)"
+        ]
+    },
+    "Torchvision: dataloader": {
+        "prefix": "pytorch:torchvision:dataloader",
+        "description": "创建一个数据加载器",
+        "body": [
+            "train_loader = DataLoader(dataset=train_dataset, batch_size=batch_size, shuffle=True)",
+            "test_loader = DataLoader(dataset=test_dataset, batch_size=batch_size, shuffle=False)"
         ]
     },
     "Torchvision: train": {

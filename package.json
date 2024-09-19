@@ -2,7 +2,7 @@
     "name": "Easy-PyTorch",
     "displayName": "Easy PyTorch",
     "description": "Type Less, Code More",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "publisher": "WangQvQ",
     "author": {
         "name": "WangQvQ",
@@ -39,6 +39,10 @@
         "snippets": [
             {
                 "language": "python",
+                "path": "./snippets/attention.json"
+            },
+            {
+                "language": "python",
                 "path": "./snippets/pytorch.json"
             },
             {
@@ -63,7 +67,7 @@
             },
             {
                 "language": "python",
-                "path": "./snippets/optim_loss.json.json"
+                "path": "./snippets/optim_loss.json"
             }
         ]
     }
