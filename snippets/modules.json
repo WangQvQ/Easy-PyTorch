@@ -1,5 +1,5 @@
 {
-    "PyTorch Module": {
+    "自定义模块类模板": {
         "prefix": "pytorch:modules:module",
         "description": "创建一个自定义类模板",
         "body": [
@@ -13,7 +13,7 @@
             "\t\treturn x"
         ]
     },
-    "PyTorch Module: autopad": {
+    "自动补Padding方法": {
         "prefix": "pytorch:modules:autopad",
         "description": "自动补Padding方法",
         "body": [
@@ -26,7 +26,7 @@
             "\treturn p"
         ]
     },
-    "PyTorch Module: Conv": {
+    "标准卷积": {
         "prefix": "pytorch:modules:Conv",
         "description": "标准卷积",
         "body": [
@@ -47,7 +47,7 @@
             "\t\treturn self.act(self.bn(self.conv(x)))"
         ]
     },
-    "PyTorch Module: LightConv": {
+    "轻量级卷积": {
         "prefix": "pytorch:modules:LightConv",
         "description": "轻量级卷积",
         "body": [
@@ -65,7 +65,7 @@
             "\t\treturn self.conv2(self.conv1(x))"
         ]
     },
-    "PyTorch Module: DWConv": {
+    "深度可分离卷积": {
         "prefix": "pytorch:modules:DWConv",
         "description": "深度可分离卷积",
         "body": [
@@ -77,7 +77,7 @@
             "\t\tsuper().__init__(c1, c2, k, s, g=math.gcd(c1, c2), d=d, act=act)"
         ]
     },
-    "PyTorch Module: DWConvTranspose2d": {
+    "深度可分离反卷积": {
         "prefix": "pytorch:modules:DWConvTranspose2d",
         "description": "深度可分离反卷积",
         "body": [
@@ -89,7 +89,7 @@
             "\t\tsuper().__init__(c1, c2, k, s, p1, p2, groups=math.gcd(c1, c2))"
         ]
     },
-    "PyTorch Module: ConvTranspose": {
+    "二维反卷积": {
         "prefix": "pytorch:modules:ConvTranspose",
         "description": "二维反卷积",
         "body": [
@@ -110,7 +110,7 @@
             "\t\treturn self.act(self.bn(self.conv_transpose(x)))"
         ]
     },
-    "PyTorch Module: GhostConv": {
+    "Ghost 卷积": {
         "prefix": "pytorch:modules:GhostConv",
         "description": "GhostConv",
         "body": [
@@ -130,7 +130,7 @@
             "\t\treturn torch.cat((y, self.cv2(y)), 1)"
         ]
     },
-    "PyTorch Module: VGG16": 
+    "VGG16 网络": 
     {
         "prefix": "pytorch:modules:VGG16",
         "description": "创建一个 VGG16 网络",

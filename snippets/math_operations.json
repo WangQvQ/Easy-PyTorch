@@ -1,47 +1,47 @@
 {
-    "Math Operations: add": {
+    "加法操作": {
         "prefix": "pytorch:math:add",
         "description": "加法操作",
         "body": [
             "torch.add(input=$1, other=$2, alpha=1, out=None)"
         ]
     },
-    "Math Operations: absolute": {
+    "绝对值操作": {
         "prefix": "pytorch:math:absolute",
         "description": "绝对值操作",
         "body": [
             "torch.absolute(input=$1, out=None)"
         ]
     },
-    "Math Operations: div": {
+    "除法操作": {
         "prefix": "pytorch:math:div",
         "description": "除法操作",
         "body": [
             "torch.div(input=$1, other=$2, rounding_mode=None, out=None)"
         ]
     },
-    "Math Operations: mul": {
+    "乘法操作": {
         "prefix": "pytorch:math:mul",
         "description": "乘法操作",
         "body": [
             "torch.mul(input=$1, other=$2, out=None)"
         ]
     },
-    "Math Operations: pow": {
+    "求幂操作": {
         "prefix": "pytorch:math:pow",
         "description": "求幂操作",
         "body": [
             "torch.pow(input=$1, exponent=$2, out=None)"
         ]
     },
-    "Math Operations: mm": {
+    "矩阵叉乘": {
         "prefix": "pytorch:math:mm",
         "description": "矩阵叉乘",
         "body": [
             "torch.mm(input=$1, mat2=$2, out=None)"
         ]
     },
-    "Math Operations: mv": {
+    "矩阵与向量相乘": {
         "prefix": "pytorch:math:mv",
         "description": "矩阵与向量相乘",
         "body": [

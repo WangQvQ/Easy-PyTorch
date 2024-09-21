@@ -1,5 +1,5 @@
 {
-    "PyTorch Imports": {
+    "常用的 PyTorch 导入": {
         "prefix": "pytorch:imports",
         "description": "常用的 PyTorch 导入库",
         "body": [
@@ -9,14 +9,14 @@
             "from torch.utils.data import DataLoader"
         ]
     },
-    "Check Device": {
+    "检查可用的设备": {
         "prefix": "pytorch:device",
         "description": "检查可用的设备",
         "body": [
             "device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')"
         ]
     },
-    "Check Environment": {
+    "检查PyTorch环境": {
         "prefix": "pytorch:check",
         "description": "检查PyTorch环境",
         "body": [
@@ -27,7 +27,7 @@
             "print(torch.cuda.is_available()) # \u67e5\u770bcuda\u662f\u5426\u53ef\u7528"
         ]
     },
-    "Distance Functions": {
+    "选择距离函数": {
         "prefix": "pytorch:distance",
         "description": "选择距离函数",
         "body": [

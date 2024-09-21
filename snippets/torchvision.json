@@ -1,5 +1,5 @@
 {
-    "Torchvision: dataset: MNIST": {
+    "MNIST 数据集": {
         "prefix": "pytorch:torchvision:dataset:MNIST",
         "description": "定义 MNIST 数据集",
         "body": [
@@ -7,7 +7,7 @@
             "test_dataset = datasets.MNIST(root='./data', train=False, transform=transforms.ToTensor(), download=True)"
         ]
     },
-    "Torchvision: dataset: CIFAR10": {
+    "CIFAR10 数据集": {
         "prefix": "pytorch:torchvision:dataset:CIFAR10",
         "description": "定义 CIFAR10 数据集",
         "body": [
@@ -15,7 +15,7 @@
             "test_dataset = datasets.CIFAR10(root='./data', train=False, transform=transforms.ToTensor(), download=True)"
         ]
     },
-    "Torchvision: dataloader": {
+    "数据加载器": {
         "prefix": "pytorch:torchvision:dataloader",
         "description": "创建一个数据加载器",
         "body": [
@@ -23,7 +23,7 @@
             "test_loader = DataLoader(dataset=test_dataset, batch_size=batch_size, shuffle=False)"
         ]
     },
-    "Torchvision: train": {
+    "分类模型训练模板": {
         "prefix": "pytorch:torchvision:train",
         "description": "分类模型训练模板",
         "body": [
@@ -71,7 +71,7 @@
             "\tprint(f'\u6d4b\u8bd5\u51c6\u786e\u7387: {accuracy:.2f}%')"
         ]
     },
-    "Torchvision: Classification example": {
+    "分类模型经典例子": {
         "prefix": "pytorch:torchvision:classification example",
         "description": "分类模型经典例子",
         "body": [
