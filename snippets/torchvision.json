@@ -48,7 +48,7 @@
             "\tprint(f'\u8bad\u7ec3\u635f\u5931: {average_loss:.4f}')"
         ]
     },
-    "Torchvision: test": {
+    "分类模型验证模板": {
         "prefix": "pytorch:torchvision:test",
         "description": "分类模型验证模板",
         "body": [
