@@ -20,14 +20,14 @@
             "tensor$1 = torch.rand(2, 3)"
         ]
     },
-    "全 0 张量": {
+    "全0张量": {
         "prefix": "pytorch:tensor:zeros",
         "description": "创建一个全 0 张量",
         "body": [
             "tensor$1 = torch.zeros(2, 3)"
         ]
     },
-    "全 1 张量": {
+    "全1张量": {
         "prefix": "pytorch:tensor:ones",
         "description": "创建一个全 1 张量",
         "body": [

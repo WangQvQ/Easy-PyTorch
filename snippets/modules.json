@@ -110,7 +110,7 @@
             "\t\treturn self.act(self.bn(self.conv_transpose(x)))"
         ]
     },
-    "Ghost 卷积": {
+    "Ghost卷积": {
         "prefix": "pytorch:modules:GhostConv",
         "description": "GhostConv",
         "body": [
@@ -130,7 +130,7 @@
             "\t\treturn torch.cat((y, self.cv2(y)), 1)"
         ]
     },
-    "VGG16 网络": 
+    "VGG16网络": 
     {
         "prefix": "pytorch:modules:VGG16",
         "description": "创建一个 VGG16 网络",

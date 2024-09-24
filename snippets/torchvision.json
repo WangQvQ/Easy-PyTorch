@@ -1,5 +1,5 @@
 {
-    "MNIST 数据集": {
+    "MNIST数据集": {
         "prefix": "pytorch:torchvision:dataset:MNIST",
         "description": "定义 MNIST 数据集",
         "body": [
@@ -7,7 +7,7 @@
             "test_dataset = datasets.MNIST(root='./data', train=False, transform=transforms.ToTensor(), download=True)"
         ]
     },
-    "CIFAR10 数据集": {
+    "CIFAR10数据集": {
         "prefix": "pytorch:torchvision:dataset:CIFAR10",
         "description": "定义 CIFAR10 数据集",
         "body": [

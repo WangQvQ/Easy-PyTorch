@@ -34,7 +34,7 @@
             "bn$1 = nn.BatchNorm2d(out_channels=$2, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, device=None, dtype=None)"
         ]
     },
-    "Containers": {
+    "容器层": {
         "prefix": "pytorch:layer:container",
         "description": "将模块或参数存储在某种容器中",
         "body": [
@@ -48,7 +48,7 @@
             "${1:linear} = nn.Linear(in_features=${2:10}, out_features=${3:5}, bias=${4|True,False|})"
         ]
     },
-    "Dropout 层": {
+    "Dropout层": {
         "prefix": "pytorch:layer:dropout",
         "description": "创建一个 Dropout 层",
         "body": [

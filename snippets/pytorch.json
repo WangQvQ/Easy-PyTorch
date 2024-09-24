@@ -1,7 +1,7 @@
 {
-    "常用的 PyTorch 导入": {
+    "PyTorch基础包导入": {
         "prefix": "pytorch:imports",
-        "description": "常用的 PyTorch 导入库",
+        "description": "PyTorch基础包导入",
         "body": [
             "import torch",
             "from torch import nn, optim",

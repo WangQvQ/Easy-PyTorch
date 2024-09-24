@@ -1,5 +1,5 @@
 {
-    "SE 注意力模块": {
+    "SE注意力模块": {
         "prefix": "pytorch:attention:SE",
         "description": "SE 注意力模块",
         "body": [
@@ -29,7 +29,7 @@
             "\t\treturn x * y.expand_as(x)  # \u5e94\u7528\u6743\u91cd\u5e76\u8fd4\u56de\u7f29\u653e\u540e\u7684\u7279\u5f81\u56fe"
         ]
     },
-    "CBAM 注意力模块": {
+    "CBAM注意力模块": {
         "prefix": "pytorch:attention:CBAM",
         "description": "CBAM 注意力模块",
         "body": [
@@ -94,7 +94,7 @@
             "\t\treturn out"
         ]
     },
-    "ECA 注意力模块": {
+    "ECA注意力模块": {
         "prefix": "pytorch:attention:ECA",
         "description": "ECA 注意力模块",
         "body": [
@@ -121,7 +121,7 @@
             "\t\treturn x * y.expand_as(x)  # \u5c06\u6ce8\u610f\u529b\u6743\u91cd\u5e94\u7528\u4e8e\u539f\u59cb\u8f93\u5165\u7279\u5f81\u56fe\uff0c\u8fdb\u884c\u7279\u5f81\u91cd\u6807\u5b9a"
         ]
     },
-    "CA 注意力模块": {
+    "CA注意力模块": {
         "prefix": "pytorch:attention:CA",
         "description": "CA 注意力模块",
         "body": [
