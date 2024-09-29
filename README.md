@@ -20,7 +20,7 @@
 
 我们的目标是让机器学习的编程不仅高效，而且更加用户友好，即使是编程新手也能快速上手并享受创造自己的机器学习模型的乐趣。
 
-<div style="text-align: center;">
+<div align="center">
 <img src="https://raw.githubusercontent.com/WangQvQ/Easy-PyTorch/main/images/preview.gif" alt="peculiarity"/>
 </div>
 
@@ -32,11 +32,11 @@
 - **高度定制**：插件的代码片段包括占位符、变量和选项，您可以轻松定制，并通过 Tab 键在不同选项间切换。
 
 
-<div style="text-align: center;">
+<div align="center">
 <img src="https://raw.githubusercontent.com/WangQvQ/Easy-PyTorch/main/images/prompt.png" alt="peculiarity" width="800"/>
 </div>
 
-<div style="text-align: center;">
+<div align="center">
 <img src="https://raw.githubusercontent.com/WangQvQ/Easy-PyTorch/refs/heads/main/images/catalogue.png" alt="peculiarity"/>
 </div>
 
@@ -47,7 +47,7 @@
 ### 方法 1
 Visual Studio Code 扩展中搜索 Easy Pytorch 点击安装即可
 
-<div style="text-align: center;">
+<div align="center">
 <img src="https://raw.githubusercontent.com/WangQvQ/Easy-PyTorch/main/images/vscode.png" alt="peculiarity"/>
 </div>
 
