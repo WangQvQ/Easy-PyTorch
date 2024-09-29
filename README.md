@@ -2,6 +2,11 @@
 # Easy-PyTorch
 
 
+<p align="center">
+  中文 | <a href="README_en.md">English</a>
+</p>
+
+
 ![Dynamic JSON Badge](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FWangQvQ%2FEasy-PyTorch%2Fmain%2Fpackage.json&query=version&prefix=v&label=Easy-PyTorch) ![Dynamic JSON Badge](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FWangQvQ%2FEasy-PyTorch%2Fmain%2Fpackage.json&query=license&label=license&color=%237FFF00) ![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/WangQvQ.Easy-PyTorch?color=red)
 
 
