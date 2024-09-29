@@ -36,6 +36,10 @@
 <img src="https://raw.githubusercontent.com/WangQvQ/Easy-PyTorch/main/images/prompt.png" alt="peculiarity" width="800"/>
 </div>
 
+<div style="text-align: center;">
+<img src="https://raw.githubusercontent.com/WangQvQ/Easy-PyTorch/refs/heads/main/images/catalogue.png" alt="peculiarity"/>
+</div>
+
 ## 如何安装
 
 
@@ -47,9 +51,6 @@ Visual Studio Code 扩展中搜索 Easy Pytorch 点击安装即可
 <img src="https://raw.githubusercontent.com/WangQvQ/Easy-PyTorch/main/images/vscode.png" alt="peculiarity"/>
 </div>
 
-<div style="text-align: center;">
-<img src="Easy-PyTorch/images/catalogue.png" alt="peculiarity"/>
-</div>
 
 
 ### 方法 2
