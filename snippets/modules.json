@@ -10,7 +10,8 @@
             "\t\t$2",
             "\tdef forward(self, x):",
             "\t\t$3",
-            "\t\treturn x"
+            "\t\treturn x",
+            "$4"
         ]
     },
     "自动补Padding方法": {
