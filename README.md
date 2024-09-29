@@ -47,6 +47,10 @@ Visual Studio Code 扩展中搜索 Easy Pytorch 点击安装即可
 <img src="https://raw.githubusercontent.com/WangQvQ/Easy-PyTorch/main/images/vscode.png" alt="peculiarity"/>
 </div>
 
+<div style="text-align: center;">
+<img src="Easy-PyTorch/images/catalogue.png" alt="peculiarity"/>
+</div>
+
 
 ### 方法 2
 将本地项目移动到 Visual Studio Code 的扩展文件夹，可以通过简单的文件操作完成。以下是一般步骤和注意事项：

@@ -18,16 +18,30 @@ Furthermore, Easy-PyTorch also offers a series of tutorials and tips suitable fo
 
 Our goal is to make programming in machine learning not only efficient but also more user-friendly, so that even programming novices can quickly get started and enjoy creating their own machine learning models.
 
+
+<div style="text-align: center;">
+<img src="https://raw.githubusercontent.com/WangQvQ/Easy-PyTorch/main/images/preview.gif" alt="peculiarity"/>
+</div>
+
 ## Features
 
 - **Code Snippet Library**: Extensive code snippets covering various PyTorch operations, providing a shortcut to rapid programming.
 - **Intelligent Tips**: As you write code, simply enter `pytorch` to see all related available code snippets.
 - **High Customization**: The plugin's code snippets include placeholders, variables, and options that you can easily customize and navigate through using the Tab key.
 
+<div style="text-align: center;">
+<img src="https://raw.githubusercontent.com/WangQvQ/Easy-PyTorch/main/images/prompt.png" alt="peculiarity" width="800"/>
+</div>
+
 ## How to Install
 
 ### Method 1
 Search for Easy PyTorch in the Visual Studio Code extension and click install.
+
+<div style="text-align: center;">
+<img src="https://raw.githubusercontent.com/WangQvQ/Easy-PyTorch/main/images/vscode.png" alt="peculiarity"/>
+</div>
+
 
 ### Method 2
 Move the local project to the Visual Studio Code extensions folder, which can be done with simple file operations. Here are the general steps and precautions:

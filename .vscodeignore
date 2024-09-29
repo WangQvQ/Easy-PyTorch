@@ -1,12 +1,18 @@
-.vscode/**
-.vscode-test/**
-out/test/**
-test/**
-src/**
-**/*.map
-.gitignore
-snippet_maker.py
-python_snippet.txt
-python_snippet.json
-tsconfig.json
-vsc-extension-quickstart.md
+# Directory Patterns
+.vscode/                 # VSCode specific settings
+.vscode-test/            # VSCode tests
+out/test/                # Test output
+test/                    # Test files
+src/                     # Source files
+images/                  # Image files
+
+# File Patterns
+**/*.map                 # Source map files
+.gitignore               # Specifies intentionally untracked files to ignore
+
+# Specific Files
+snippet_maker.py         # Python script for making snippets
+python_snippet.txt       # Text file for Python snippets
+python_snippet.json      # JSON file for Python snippets
+tsconfig.json            # TypeScript configuration file
+vsc-extension-quickstart.md  # Quickstart guide for VSCode extension
