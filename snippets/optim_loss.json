@@ -12,5 +12,12 @@
         "body": [
             "criterion = nn.${1|CrossEntropyLoss,NLLLoss,PoissonNLLLoss,BCELoss,BCEWithLogitsLoss,MarginRankingLoss,HingeEmbeddingLoss,MultiLabelMarginLoss,SoftMarginLoss,MultiLabelSoftMarginLoss,CosineEmbeddingLoss,MultiMarginLoss,TripletMarginLoss,CTCLoss|}()"
         ]
+    },
+    "学习率调整策略": {
+        "prefix": "pytorch:lr_scheduler",
+        "description": "选择学习率调整策略",
+        "body": [
+            "scheduler = torch.optim.lr_scheduler.${1|StepLR(optimizer\\, step_size=2\\, gamma=0.1),MultiStepLR(optimizer\\, milestones=[30\\, 80]\\, gamma=0.1),ExponentialLR(optimizer\\, gamma=0.95),CosineAnnealingWarmRestarts(optimizer\\, T_0=10\\, T_mult=2),ChainedScheduler([StepLR(optimizer\\, step_size=1)\\, ExponentialLR(optimizer\\, gamma=0.9)]),CosineAnnealingLR(optimizer\\, T_max=50),SequentialLR(optimizer\\, schedulers=[StepLR(optimizer\\, step_size=1)\\,ExponentialLR(optimizer\\, gamma=0.9)]\\, milestones=[10]),ReduceLROnPlateau(optimizer\\, mode='min'\\, factor=0.1\\, patience=10),CyclicLR(optimizer\\, base_lr=0.001\\, max_lr=0.01\\, step_size_up=5\\, step_size_down=20),OneCycleLR(optimizer\\, max_lr=0.1\\, total_steps=100),LambdaLR(optimizer\\, lr_lambda=lambda epoch: epoch // 10 * 0.95),LinearLR(optimizer\\, start_factor=0.1\\, end_factor=1.0\\, total_iters=100),ConstantLR(optimizer\\, factor=0.1\\, total_iters=100),MultiplicativeLR(optimizer\\, lr_lambda=lambda epoch: 0.95)|}"
+        ]
     }
 }

@@ -76,7 +76,9 @@
         "description": "分类模型经典例子",
         "body": [
             "import torch",
-            "from torch import nn, optim",
+            "import torch.nn as nn",
+            "import torch.optim as optim",
+            "import torch.optim.lr_scheduler as lr_scheduler",
             "from torchvision import datasets, transforms",
             "from torch.utils.data import DataLoader",
             "",
@@ -100,7 +102,7 @@
             "\tdef __init__(self, input_size=784, num_classes=10):",
             "\t\tsuper(SimpleNN, self).__init__()",
             "\t\tself.fc1 = nn.Linear(input_size, num_classes)",
-            "   ",
+            "  ",
             "\tdef forward(self, x):",
             "\t\tx = x.view(x.size(0), -1)  # \u5c55\u5e73\u56fe\u50cf\u4e3a\u4e00\u7ef4\u5411\u91cf",
             "\t\treturn torch.softmax(self.fc1(x), dim=1)",
@@ -132,16 +134,18 @@
             "\tprint(f'\u6d4b\u8bd5\u51c6\u786e\u7387: {100 * correct / total:.2f}%')",
             "",
             "if __name__ == '__main__':",
-            "\ttrain_loader, test_loader = initialize_data_loaders(download=True)",
+            "\ttrain_loader, test_loader = initialize_data_loaders(batch_size=64, download=True)",
             "\tmodel = SimpleNN()",
             "\tloss_function = nn.CrossEntropyLoss()",
             "\toptimizer = optim.SGD(model.parameters(), lr=0.1)",
+            "\tscheduler = lr_scheduler.StepLR(optimizer, step_size=2, gamma=0.1)",
             "\tepochs = 3",
             "",
             "\tfor epoch in range(epochs):",
             "\t\tprint(f'Epoch {epoch + 1}/{epochs}:')",
             "\t\ttrain(model, train_loader, optimizer, loss_function)",
-            "\t\ttest(model, test_loader)"
+            "\t\ttest(model, test_loader)",
+            "\t\tscheduler.step()"
         ]
     }
 }

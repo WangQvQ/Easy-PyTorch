@@ -4,7 +4,9 @@
         "description": "导入PyTorch基础包",
         "body": [
             "import torch",
-            "from torch import nn, optim",
+            "import torch.nn as nn",
+            "import torch.optim as optim",
+            "import torch.optim.lr_scheduler as lr_scheduler",
             "from torchvision import datasets, transforms",
             "from torch.utils.data import DataLoader"
         ]
