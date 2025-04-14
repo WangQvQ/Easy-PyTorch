@@ -38,10 +38,6 @@ Our goal is to make programming in machine learning not only efficient but also 
 ### Method 1
 Search for Easy PyTorch in the Visual Studio Code extension and click install.
 
-<div align="center">
-<img src="https://raw.githubusercontent.com/WangQvQ/Easy-PyTorch/main/images/vscode.png" alt="peculiarity"/>
-</div>
-
 
 ### Method 2
 Move the local project to the Visual Studio Code extensions folder, which can be done with simple file operations. Here are the general steps and precautions:

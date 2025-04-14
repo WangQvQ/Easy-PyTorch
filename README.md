@@ -47,9 +47,6 @@
 ### 方法 1
 Visual Studio Code 扩展中搜索 Easy Pytorch 点击安装即可
 
-<div align="center">
-<img src="https://raw.githubusercontent.com/WangQvQ/Easy-PyTorch/main/images/vscode.png" alt="peculiarity"/>
-</div>
 
 
 
